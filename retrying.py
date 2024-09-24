@@ -249,7 +249,7 @@ class Retrying(object):
 
             try:
                 attempt = Attempt(fn(*args, **kwargs), attempt_number, False)
-            except:
+            except Exception:
                 tb = sys.exc_info()
                 attempt = Attempt(tb, attempt_number, True)
 
